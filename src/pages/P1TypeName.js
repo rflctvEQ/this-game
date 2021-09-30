@@ -4,15 +4,15 @@ import { useHistory } from 'react-router-dom';
 
 function TypeName() {
     const [ nameState, setNameState ] = useState('here');
-    const [ visibility, setVisibility ] = useState('none')
+    const [ visible, setVisible ] = useState('none')
     const [ characterNumber, setCharacterNumber ] = useState();
 
     useEffect(() => {
         // button to continue appears when user enters name 
         if (nameState !== 'here') {
-            setVisibility('initial');
+            setVisible('initial');
         } else {
-            setVisibility('none');
+            setVisible('none');
         }
         calculateInputWidth();
     })
@@ -53,7 +53,7 @@ function TypeName() {
                 <div style={{ width: '100vw', display: 'flex' }}>
                     <button 
                         className='confirmBtn' 
-                        style={{ backgroundColor: 'lightBlue', width: '6rem', marginLeft: 'auto', marginRight: 'auto', display: `${visibility}` }}
+                        style={{ backgroundColor: 'lightBlue', width: '6rem', marginLeft: 'auto', marginRight: 'auto', display: `${visible}` }}
                         onClick={() => btnHandler()}>
                             Continue
                     </button>
