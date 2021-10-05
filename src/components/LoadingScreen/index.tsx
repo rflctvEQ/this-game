@@ -1,8 +1,9 @@
+import * as React from 'react'; 
 import { useEffect, useState } from 'react';
 import './style.css';
 
 function LoadingScreen() {
-    const [ quip, setQuip ] = useState('Loading game...');
+    const [ quip, setQuip ] = useState<string>('Loading game...');
 
     const quipArray = [
         'Waiting for server...',

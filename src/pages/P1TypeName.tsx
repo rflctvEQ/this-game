@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet';
+import * as React from 'react'
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function TypeName() {
-    const [ nameState, setNameState ] = useState('here');
-    const [ visible, setVisible ] = useState('none')
-    const [ characterNumber, setCharacterNumber ] = useState();
+    const [ nameState, setNameState ] = useState<string>('here');
+    const [ visible, setVisible ] = useState<string>('none')
+    const [ characterNumber, setCharacterNumber ] = useState<number>();
 
     useEffect(() => {
         // button to continue appears when user enters name 
@@ -20,7 +21,7 @@ function TypeName() {
     // makes input width reactive to text length
     const inputWidth = characterNumber + 'rem';
     const calculateInputWidth = () => {
-        let inputLength = nameState.length;
+        let inputLength: number = nameState.length;
         setCharacterNumber(inputLength * 1.375)
     }
 
@@ -46,7 +47,7 @@ function TypeName() {
                             className='inputHere' 
                             value={nameState} 
                             onChange={e => setNameState(e.target.value)} 
-                            style={{ border: 'none', fontWeight: '500', marginLeft: '7px', width: `${inputWidth}` }}>
+                            style={{ border: 'none', fontWeight: 500, marginLeft: '7px', width: `${inputWidth}` }}>
                         </input>
                     </h1>
                 </div>

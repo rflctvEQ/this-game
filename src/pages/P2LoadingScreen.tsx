@@ -1,3 +1,4 @@
+import * as React from 'react';
 import LoadingScreen from '../components/LoadingScreen';
 import Helmet from 'react-helmet';
 
