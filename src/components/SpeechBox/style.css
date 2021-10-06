@@ -1,0 +1,36 @@
+.speechBoxWrapper {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.speechBox {
+    width: 300px;
+    height: 250px;
+    border: 10px solid rgb(129, 141, 145);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.speechText {
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nextBtn {
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(129, 141, 145);
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 10px;
+}

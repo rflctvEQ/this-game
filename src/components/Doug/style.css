@@ -1,0 +1,59 @@
+.outerBox {
+    display: flex;
+    width: 100%;
+    /* background-color: lightgray; */
+    margin-top: 50px;
+}
+
+.innerBox {
+    background-color: lightblue;
+    /* z-index: -2; */
+    width: 200px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50px;
+}
+
+.eyeBox {
+    width: 230px;
+    height: 75px;
+    /* background-color:pink; */
+    display: flex;
+    flex-direction: row;
+}
+
+.leftEye, .rightEye {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border: 10px solid white;
+    border-radius: 100px;
+    position: relative;
+    left: 80px;
+    top: 30px;
+    z-index: 2;
+}
+
+.bugBody {
+    z-index: 1;
+    background-color: greenyellow;
+    width: 100px;
+    height: 125px;
+    border-radius:40px 1000px;
+    position: relative;
+    left: 50px;
+    top: -25px;
+    transform: rotate(45deg);
+}
+
+.mouth {
+    width: 30px;
+    height: 15px;
+    background-color: black;
+    border-radius: 1000px;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 40px;
+    left: 35px;
+}

@@ -47,7 +47,7 @@ function TypeName() {
                             className='inputHere' 
                             value={nameState} 
                             onChange={e => setNameState(e.target.value)} 
-                            style={{ border: 'none', fontWeight: 500, marginLeft: '7px', width: `${inputWidth}` }}>
+                            style={{ border: 'none', fontWeight: 500, marginLeft: '7px', width: `${inputWidth}`, backgroundColor: 'inherit'}}>
                         </input>
                     </h1>
                 </div>

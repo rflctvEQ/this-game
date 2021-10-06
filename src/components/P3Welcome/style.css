@@ -1,0 +1,23 @@
+.welcomeDiv {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.welcomeInput {
+    background-color: inherit;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.thisGame {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.continueBtn {
+    background-color: lightblue;
+    width: 6rem;
+    margin-top: 20px;
+}

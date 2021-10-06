@@ -1,7 +1,37 @@
+.outerWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 
-/*
-    Loading animation CSS
-*/
+.innerWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+}
+
+.headingWrapper {
+  min-height: 100px;
+}
+
+.loadingText {
+  line-height: 50px;
+  font-size: 50px !important;
+}
+
+.animationWrapper {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Loading animation CSS */
 .lds-roller {
     display: inline-block;
     position: relative;
