@@ -6,7 +6,7 @@ function RebootSequence() {
 
     return (
         <>
-            <Helmet>Reboot</Helmet>
+            <Helmet><title>Reboot</title></Helmet>
         </>
     )
 }

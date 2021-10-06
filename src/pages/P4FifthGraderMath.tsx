@@ -6,7 +6,7 @@ function FifthGraderMath() {
 
     return (
         <>
-            <Helmet>Easy Math</Helmet>
+            <Helmet><title>Easy Math</title></Helmet>
         </>
     )
 }

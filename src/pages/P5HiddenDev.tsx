@@ -6,7 +6,7 @@ function HiddenDev() {
 
     return (
         <>
-            <Helmet>Difficult Question</Helmet>
+            <Helmet><title>Difficult Question</title></Helmet>
         </>
     )
 }

@@ -11,7 +11,7 @@ function Welcome() {
 
 
     useEffect(() => {
-        if (inputState === 'Start' || inputState === 'start') {
+        if (inputState === 'Start' || inputState === 'start' || inputState === 'START') {
             setVisible('initial');
         } else {
             setVisible('none');
@@ -42,7 +42,7 @@ function Welcome() {
                     <input
                         className='welcomeInput'
                         value={inputState}
-                        onChange={e => setInputState(e.target.value)}
+                        onChange={e => setInputState(e.target.value.trim())}
                         style={{ width: `${inputWidth}` }}>
                     </input>
                 </h1>

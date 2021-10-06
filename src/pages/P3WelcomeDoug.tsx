@@ -1,11 +1,13 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import Welcome from '../components/P3Welcome';
 import Doug from '../components/Doug';
 import SpeechBox from '../components/SpeechBox';
 
 interface DialogueInterface {
-    dialogue?: string[]
+    dialogue?: string[],
+    componentVisibility?: boolean
 }
 
 const dialogueData: DialogueInterface = {
@@ -16,19 +18,46 @@ const dialogueData: DialogueInterface = {
         'I\'m gonna try to get you out of here.',
         'Just click HINT and I\'ll find you again.',
         'We can do this... together.'
-    ]
+    ],
+    componentVisibility: false
 }
 
 function WelcomeDoug(props: typeof dialogueData) {
-    // console.log(dialogueData);
-    // console.log('Page props: ', dialogueData.dialogue)
+    const [visible, setVisible] = useState<string>('none');
+    const [data, setData] = useState<any>(dialogueData);
+    const [isComponentVisible, setIsComponentVisible] = useState(dialogueData.componentVisibility);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setVisible('initial');
+            setIsComponentVisible(true);
+        }, 3000)
+    }, [])
+
+    const handleHintClick = () => {
+        if (!data.componentVisibility) {
+            setData(() => ({
+                dialogue: ['The server is looking for the phrase "Start this game"', 'Is that helpful? I feel like that\'s not helpful.', 'Oh, boy. We\'re doomed...'],
+                componentVisibility: true
+            }))
+        } else {
+            
+            setData((state: any) => ({
+                ...state,
+                componentVisibility: false
+            }))
+        }
+
+        console.log('data from parent page: ', data);
+    }
 
     return (
         <>
-            <Helmet>Welcome</Helmet>
+            <Helmet><title>Welcome</title></Helmet>
+            <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px', display: visible }}><h3>HINT</h3></button>
             <Welcome />
             <Doug />
-            <SpeechBox {...dialogueData.dialogue!} />
+            <SpeechBox {...data} />
         </>
     )
 }

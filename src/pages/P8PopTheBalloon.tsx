@@ -6,7 +6,7 @@ function PopTheBalloon() {
 
     return (
         <>
-            <Helmet>Pop the Balloon!</Helmet>
+            <Helmet><title>Pop the Balloon!</title></Helmet>
         </>
     )
 }

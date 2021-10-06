@@ -6,7 +6,7 @@ function ExecuteProtocol() {
 
     return (
         <>
-            <Helmet>Execute</Helmet>
+            <Helmet><title>Execute</title></Helmet>
         </>
     )
 }

@@ -6,7 +6,7 @@ function No() {
 
     return (
         <>
-            <Helmet>Rhode Island</Helmet>
+            <Helmet><title>Rhode Island</title></Helmet>
         </>
     )
 }
