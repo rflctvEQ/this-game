@@ -17,7 +17,12 @@
 }
 
 .continueBtn {
-    background-color: lightblue;
-    width: 6rem;
-    margin-top: 20px;
+    background-color: rgb(132, 255, 186);
+    width: 10rem;
+    height: 3rem;
+    margin: 25px auto;
+    border: none;
+    border-radius: 2000px;
+    line-height: 1;
+    font-size: 1.5rem;
 }

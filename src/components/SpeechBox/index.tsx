@@ -14,19 +14,15 @@ function SpeechBox(props: any) {
     const dialogueItemsLength: number = propsDialogue.length - 1;
 
     useEffect(() => {
+        // update dialogue and component visibility when props change
         setPropsDialogue(props.dialogue);
         setPropsComponentVisibility(props.componentVisibility);
-        console.log('=======================')
-        // console.log('propsComponenetVisibility: ', propsComponentVisibility);
-        // console.log('index: ', index)
-        // console.log('array length: ', dialogueItemsLength);
-        // console.log('visible: ', visible);
-        // console.log('noDialogue: ', noDialogue);
         if (index < dialogueItemsLength) {
             setVisible('1');
         } 
     })
 
+    // make component visible when component visibility props is true
     useEffect(() => {
         if (propsComponentVisibility === true && noDialogue){ 
             setVisible('1');
@@ -35,7 +31,7 @@ function SpeechBox(props: any) {
         } 
     }, [propsComponentVisibility])
     
-
+    // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
         if (index < dialogueItemsLength) {
             setVisible('1');

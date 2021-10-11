@@ -31,7 +31,7 @@ function WelcomeDoug(props: typeof dialogueData) {
         setTimeout(() => {
             setVisible('initial');
             setIsComponentVisible(true);
-        }, 3000)
+        }, 10000)
     }, [])
 
     const handleHintClick = () => {
@@ -41,14 +41,14 @@ function WelcomeDoug(props: typeof dialogueData) {
                 componentVisibility: true
             }))
         } else {
-            
+
             setData((state: any) => ({
                 ...state,
                 componentVisibility: false
             }))
         }
 
-        console.log('data from parent page: ', data);
+        // console.log('data from parent page: ', data);
     }
 
     return (
@@ -56,8 +56,13 @@ function WelcomeDoug(props: typeof dialogueData) {
             <Helmet><title>Welcome</title></Helmet>
             <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px', display: visible }}><h3>HINT</h3></button>
             <Welcome />
-            <Doug />
-            <SpeechBox {...data} />
+            {
+                (isComponentVisible === true) ?
+                    <>
+                        <Doug {...data} />
+                        <SpeechBox {...data} />
+                    </> : null
+            }
         </>
     )
 }

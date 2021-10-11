@@ -2,17 +2,23 @@
     display: flex;
     width: 100%;
     /* background-color: lightgray; */
-    margin-top: 50px;
+    margin: 125px auto 50px auto;
 }
 
 .innerBox {
-    background-color: lightblue;
-    /* z-index: -2; */
-    width: 200px;
-    height: 200px;
+    background-image: linear-gradient(white, black);
+    width: 100px;
+    height: 80px;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 50px;
+    /* My power is over 9000! */
+    border-radius: 9999999999999px;
+}
+
+.doug {
+    position: relative;
+    top: -123px;
+    right: 42px
 }
 
 .eyeBox {
@@ -49,11 +55,11 @@
 
 .mouth {
     width: 30px;
-    height: 15px;
+    height: 3px;
     background-color: black;
     border-radius: 1000px;
-    transform: rotate(-45deg);
+    transform: rotate(-70deg);
     position: relative;
-    top: 40px;
-    left: 35px;
+    top: 34px;
+    left: 17px;
 }

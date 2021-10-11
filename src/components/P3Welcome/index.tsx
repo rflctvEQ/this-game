@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import './style.css';
 
 function Welcome() {
@@ -51,7 +52,8 @@ function Welcome() {
                         className='continueBtn' 
                         style={{ display: `${visible}` }}
                         onClick={() => btnHandler()}>
-                            Continue
+                            Continue {' '}
+                            <BsFillArrowRightCircleFill />
                     </button>
             </div>
         </>

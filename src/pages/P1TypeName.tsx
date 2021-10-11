@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import * as React from 'react'
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 function TypeName() {
     const [ nameState, setNameState ] = useState<string>('here');
@@ -41,7 +42,7 @@ function TypeName() {
             </Helmet>
             <main className='wrapper' style={{ width: '100vw', height: '100vh' }}>
                 <div className='typeNameHere'>
-                    <h1 style={{ textAlign: 'center', marginTop: '3rem' }}>
+                    <h1 style={{ textAlign: 'center', marginTop: '20vh', fontSize: '4vh', fontFamily: 'monospace' }}>
                         Type your name
                         <input 
                             className='inputHere' 
@@ -51,12 +52,24 @@ function TypeName() {
                         </input>
                     </h1>
                 </div>
-                <div style={{ width: '100vw', display: 'flex' }}>
+                <div style={{ width: '100vw', display: 'flex', marginTop: '50px' }}>
                     <button 
                         className='confirmBtn' 
-                        style={{ backgroundColor: 'lightBlue', width: '6rem', marginLeft: 'auto', marginRight: 'auto', display: `${visible}` }}
+                        style={{ 
+                            backgroundColor: 'rgb(132, 255, 186)', 
+                            width: '10rem',
+                            height: '3rem',
+                            marginLeft: 'auto', 
+                            marginRight: 'auto', 
+                            display: `${visible}`,
+                            border: 'none',
+                            borderRadius: '2000px',
+                            lineHeight: '1',
+                            fontSize: '1.5rem'
+                        }}
                         onClick={() => btnHandler()}>
-                            Continue
+                            Continue{' '}
+                            <BsFillArrowRightCircleFill />
                     </button>
                 </div>
             </main>
