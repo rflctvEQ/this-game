@@ -28,7 +28,7 @@ function LoadingScreen() {
         } else if (quip === quipArray[2]) {
             setTimeout(() => {
                 setQuip(quipArray[3])
-            }, 1950)
+            }, 1999)
         }
     })
 

@@ -5,10 +5,10 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import './style.css';
 
 function Welcome() {
-    const [ inputState, setInputState ] = useState<string>('Welcome to');
-    const [ visible, setVisible ] = useState<string>('none');
-    const [ characterNumber, setCharacterNumber ] = useState<number>();
-    const [ textColor, setTextColor ] = useState<string>('rgb(255, 0, 0)');
+    const [inputState, setInputState] = useState<string>('Welcome to');
+    const [visible, setVisible] = useState<string>('none');
+    const [characterNumber, setCharacterNumber] = useState<number>();
+    const [textColor, setTextColor] = useState<string>('rgb(255, 0, 0)');
 
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function Welcome() {
     // change color of 'this game' and send user to next page after a moment
     const btnHandler = () => {
         setTextColor('green');
-        setTimeout(()=>{
+        setTimeout(() => {
             history.push('/144')
         }, 1500)
     }
@@ -47,14 +47,14 @@ function Welcome() {
                         style={{ width: `${inputWidth}` }}>
                     </input>
                 </h1>
-                <h1 className='thisGame' style={{color: `${textColor}`}}>this game</h1>
-                <button 
-                        className='continueBtn' 
-                        style={{ display: `${visible}` }}
-                        onClick={() => btnHandler()}>
-                            Continue {' '}
-                            <BsFillArrowRightCircleFill />
-                    </button>
+                <h1 className='thisGame' style={{ color: `${textColor}` }}>this game</h1>
+                <button
+                    className='continueBtn'
+                    style={{ display: `${visible}` }}
+                    onClick={() => btnHandler()}>
+                    Continue {' '}
+                    <BsFillArrowRightCircleFill />
+                </button>
             </div>
         </>
     )

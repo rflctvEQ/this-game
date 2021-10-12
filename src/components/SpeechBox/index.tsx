@@ -17,9 +17,11 @@ function SpeechBox(props: any) {
         // update dialogue and component visibility when props change
         setPropsDialogue(props.dialogue);
         setPropsComponentVisibility(props.componentVisibility);
-        if (index < dialogueItemsLength) {
+        if (window.location.pathname === '/welcome' && index < dialogueItemsLength) {
             setVisible('1');
-        } 
+        } else if (props.componentVisibility && !noDialogue) {
+            setVisible('1');
+        }
     })
 
     // make component visible when component visibility props is true

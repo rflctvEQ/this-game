@@ -1,4 +1,4 @@
-export { default as P1TypeName } from './P1TypeName';
+export { default as P1TypeName } from './P1TypeName/index';
 export { default as P2LoadingScreen } from './P2LoadingScreen';
 export { default as P3WelcomeDoug } from './P3WelcomeDoug';
 export { default as P4FifthGraderMath } from './P4FifthGraderMath';

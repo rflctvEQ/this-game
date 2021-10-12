@@ -37,7 +37,7 @@ function WelcomeDoug(props: typeof dialogueData) {
     const handleHintClick = () => {
         if (!data.componentVisibility) {
             setData(() => ({
-                dialogue: ['The server is looking for the phrase "Start this game"', 'Is that helpful? I feel like that\'s not helpful.', 'Oh, boy. We\'re doomed...'],
+                dialogue: ['The server is looking for the phrase "Start this game"', 'Is that helpful? I feel like that\'s not helpful.', 'Oh, boy...'],
                 componentVisibility: true
             }))
         } else {

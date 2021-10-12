@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import { P1TypeName, P2LoadingScreen, P3WelcomeDoug, P4FifthGraderMath, P5HiddenDev, P6OnePlusOne, P7No, P8PopTheBalloon, P9ExecuteProtocol, RebootSequence } from './pages';
+import P1TypeName from './pages/P1TypeName';
+import { P2LoadingScreen, P3WelcomeDoug, P4FifthGraderMath, P5HiddenDev, P6OnePlusOne, P7No, P8PopTheBalloon, P9ExecuteProtocol, RebootSequence } from './pages';
 import './App.css';
 
 function App() {

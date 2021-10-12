@@ -1,0 +1,36 @@
+.mathWrapper {
+    margin-top: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* input box */
+.mathAnswer {
+    width: 100px;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 25px auto;
+}
+
+.continueBtn {
+    background-color: #B8C6FF;
+    width: 10rem;
+    height: 3rem;
+    margin: 25px auto;
+    border: none;
+    border-radius: 2000px;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+.continueBtn:hover {
+    background-color: #A7C6E8;
+    color: rgb(197, 240, 255);
+}
+
+.continueBtn:active {
+    background-color: #A7C6E8;
+    color: rgb(197, 240, 255);
+    transform: scale(95%);
+}

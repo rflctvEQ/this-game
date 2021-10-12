@@ -3,15 +3,17 @@ import * as React from 'react'
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
+import './style.css'
 
 function TypeName() {
     const [ nameState, setNameState ] = useState<string>('here');
     const [ visible, setVisible ] = useState<string>('none')
     const [ characterNumber, setCharacterNumber ] = useState<number>();
+    const username = nameState.trim();
 
     useEffect(() => {
         // button to continue appears when user enters name 
-        if (nameState !== 'here') {
+        if (username !== 'here' && username !== '') {
             setVisible('initial');
         } else {
             setVisible('none');
@@ -40,33 +42,22 @@ function TypeName() {
             <Helmet>
                 <title>Enter name</title>
             </Helmet>
-            <main className='wrapper' style={{ width: '100vw', height: '100vh' }}>
+            <main className='wrapper'>
                 <div className='typeNameHere'>
-                    <h1 style={{ textAlign: 'center', marginTop: '20vh', fontSize: '4vh', fontFamily: 'monospace' }}>
+                    <h1 className='typeYourName'>
                         Type your name
                         <input 
                             className='inputHere' 
                             value={nameState} 
                             onChange={e => setNameState(e.target.value)} 
-                            style={{ border: 'none', fontWeight: 500, marginLeft: '7px', width: `${inputWidth}`, backgroundColor: 'inherit'}}>
+                            style={{ width: `${inputWidth}`}}>
                         </input>
                     </h1>
                 </div>
-                <div style={{ width: '100vw', display: 'flex', marginTop: '50px' }}>
+                <div className='btnDiv'>
                     <button 
                         className='confirmBtn' 
-                        style={{ 
-                            backgroundColor: 'rgb(132, 255, 186)', 
-                            width: '10rem',
-                            height: '3rem',
-                            marginLeft: 'auto', 
-                            marginRight: 'auto', 
-                            display: `${visible}`,
-                            border: 'none',
-                            borderRadius: '2000px',
-                            lineHeight: '1',
-                            fontSize: '1.5rem'
-                        }}
+                        style={{ display: `${visible}` }}
                         onClick={() => btnHandler()}>
                             Continue{' '}
                             <BsFillArrowRightCircleFill />
