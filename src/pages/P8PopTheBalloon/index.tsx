@@ -15,9 +15,9 @@ interface DialogueInterface {
 
 const popHint: DialogueInterface = {
     dialogue: [
-        'Good luck popping that balloon.',
+        'Just pop the balloon already.',
         'Or, you know...',
-        'You could always just close the tab and walk away.'
+        'You could always just go away.'
     ],
     componentVisibility: false
 }
@@ -60,13 +60,14 @@ function PopTheBalloon(props: typeof popHint) {
             setHelp(true);
             setData((state: any) => ({
                 dialogue: [
-                    'I found the bug!',
+                    'What a pesky thing!',
+                    'At least I was able to locate the bug.',
                     'Thanks for your help.',
                     'Ok, let me see...',
                     'WOW. Ummm, I haven\'t seen this before.',
-                    'Has the bug tried to get you to close your tab?',
+                    'Has the bug tried to get you to leave the game?',
                     'It wrote code that will allow it to spread to your device...',
-                    '... as soon as you close this tab.',
+                    '... as soon as you leave the game.',
                     'What a nightmare.',
                     'I can fix this. Don\'t worry, I can fix this.', 
                     'I just need to google something real quick...',
@@ -97,7 +98,7 @@ function PopTheBalloon(props: typeof popHint) {
                 !help
                 ?
                 <main>
-                    <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>HINT</h3></button>
+                    <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>LOL</h3></button>
                     <section onClick={() => handleBalloonClick()}>
                         <BalloonAndImperative />
                     </section>

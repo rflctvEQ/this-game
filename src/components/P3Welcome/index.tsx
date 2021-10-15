@@ -32,7 +32,7 @@ function Welcome() {
     const btnHandler = () => {
         setTextColor('green');
         setTimeout(() => {
-            history.push('/144')
+            history.push('/666')
         }, 1500)
     }
 

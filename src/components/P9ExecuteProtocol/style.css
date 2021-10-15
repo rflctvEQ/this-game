@@ -1,0 +1,50 @@
+.executeWrapper {
+    margin-top: 30%;
+    margin-bottom: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.executeBtn {
+    width: 300px;
+    height: 175px;
+    border: 10px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: rgb(247, 157, 157);
+    color: rgb(213, 1, 1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.executeBtn:hover {
+    background-color: rgb(252, 172, 172);
+    border: 10px solid rgb(255, 79, 79);
+}
+
+.executeBtn:active {
+    background-color: rgb(252, 172, 172);
+    border: 10px solid rgb(255, 79, 79);
+    transform: scale(0.97);
+}
+
+.executeHeading, .protocolHeading {
+    font-weight: 300;
+}
+
+.killBugHeading {
+    font-weight: 700;
+    font-family: monospace;
+    line-height: calc(1.375rem * 1.75vw) !important;
+    font-size: 2rem;
+}
+
+
+@media screen and (min-width: 900px) {
+    .executeBtn {
+        width: 25rem;
+        height: 15rem;
+    }
+}

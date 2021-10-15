@@ -13,7 +13,7 @@ function FifthGradeMath() {
 
     // make button visible if user types in correct answer
     useEffect(() => {
-        if (isNumber === 144) {
+        if (isNumber === 666) {
             setVisible('initial')
         } else {
             setVisible('none');
@@ -26,7 +26,7 @@ function FifthGradeMath() {
 
     return (
         <section className='mathWrapper'>
-            <h1 className='mathQuestion'>What is 12 x 12?</h1>
+            <h1 className='mathQuestion'>What is 18 x 37?</h1>
             <input
                 className='mathAnswer'
                 value={answerValue}

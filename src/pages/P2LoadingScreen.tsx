@@ -7,7 +7,7 @@ function LoadingScreenPage() {
         <>
             <Helmet>
                 <title>Loading</title>
-                <meta http-equiv='refresh' content='11; url=/welcome' />
+                <meta http-equiv='refresh' content='6; url=/welcome' />
             </Helmet>
             <LoadingScreen/>
         </>

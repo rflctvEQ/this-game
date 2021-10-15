@@ -17,7 +17,7 @@ function App() {
       <Route exact path='/welcome'>
         <P3WelcomeDoug />
       </Route>
-      <Route exact path='/144'>
+      <Route exact path='/666'>
         <P4FifthGraderMath />
       </Route>
       <Route exact path='/hidden'>

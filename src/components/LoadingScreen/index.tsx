@@ -9,26 +9,26 @@ function LoadingScreen() {
         'Waiting for server...',
         'Logging you in...',
         'Rendering...',
-        'Thank god you\'re here'
+        'Who\'s there?'
     ]
 
     useEffect(() => {
         if (quip === 'Loading game...') {
             setTimeout(() => {
                 setQuip(quipArray[0]);
-            }, 4000)
+            }, 2000)
         } else if (quip === quipArray[0]) {
             setTimeout(() => {
                 setQuip(quipArray[1]);
-            }, 3000)
+            }, 1500)
         } else if (quip === quipArray[1]) {
             setTimeout(() => {
                 setQuip(quipArray[2])
-            }, 2000)
+            }, 1000)
         } else if (quip === quipArray[2]) {
             setTimeout(() => {
                 setQuip(quipArray[3])
-            }, 1999)
+            }, 1400)
         }
     })
 

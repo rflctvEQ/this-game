@@ -12,7 +12,8 @@ interface DialogueInterface {
 
 const mathHint: DialogueInterface = {
     dialogue: [
-        '144. You could have used a calculator though.',
+        '666... creepy.',
+        'You could have used a calculator though.',
         'It\'s fine. I\'m not busy or anything anyway.',
         'But seriously? A math question?',
         'Don\'t worry. I\'ll get you out of here.'

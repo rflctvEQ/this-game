@@ -12,8 +12,9 @@ interface DialogueInterface {
 
 const dialogueData: DialogueInterface = {
     dialogue: [
-        'Oh, hey! I finally found you!',
-        'You shouldn\'t be here...',
+        'Oh, hey! There you are!',
+        'I thought someone might have come in.',
+        'You\'re not really supposed to be here.',
         'I\'m Doug, a bug stuck in the server of this game.',
         'I\'m gonna try to get you out of here.',
         'Just click HINT and I\'ll find you again.',
@@ -37,7 +38,7 @@ function WelcomeDoug(props: typeof dialogueData) {
     const handleHintClick = () => {
         if (!data.componentVisibility) {
             setData(() => ({
-                dialogue: ['The server is looking for the phrase "Start this game"', 'Is that helpful? I feel like that\'s not helpful.', 'Oh, boy...'],
+                dialogue: ['The server is looking for the phrase "Start this game."', 'Is that helpful? I feel like that\'s not helpful.', 'Oh, boy...'],
                 componentVisibility: true
             }))
         } else {

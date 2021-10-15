@@ -37,7 +37,7 @@ function No(props: typeof noHint) {
     return (
         <>
             <Helmet><title>Rhode Island</title></Helmet>
-            <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>HINT</h3></button>
+            <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>No.</h3></button>
             <RhodeIsland />
             <Doug {...data} />
             <SpeechBox {...data} />

@@ -16,11 +16,11 @@ const easyHint: DialogueInterface = {
         'Don\'t you wanna get out of here?',
         'This game isn\'t fun.',
         'Now that I think of it, couldn\'t you leave anytime?',
-        'Close the tab.',
-        'You\'re wasting your time. Close the tab.',
+        'Play a different game.',
+        'You\'re wasting your time. Go anywhere else.',
         'LEAVE.',
-        'Did you think I wasn\'t able to read the text after you revealed it too?',
-        'Close the tab.'
+        'You know I read that hidden text too, right?',
+        'Go away.'
     ],
     componentVisibility: false
 }
