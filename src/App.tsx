@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
-      <Route exact path={['/', '/this-game']}>
+      <Route exact path='/'>
         <P1TypeName />
       </Route>
       <Route exact path='/load'>
