@@ -6,36 +6,36 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename ={process.env.PUBLIC_URL}>
     <Switch>
-      <Route exact path='/'>
+      <Route exact path={['/', '/this-game']}>
         <P1TypeName />
       </Route>
-      <Route exact path='/load'>
+      <Route path='/load'>
         <P2LoadingScreen />
       </Route>
-      <Route exact path='/welcome'>
+      <Route path='/welcome'>
         <P3WelcomeDoug />
       </Route>
-      <Route exact path='/666'>
+      <Route path='/666'>
         <P4FifthGraderMath />
       </Route>
-      <Route exact path='/hidden'>
+      <Route path='/hidden'>
         <P5HiddenDev />
       </Route>
-      <Route exact path='/dont-close-this-tab'>
+      <Route path='/dont-close-this-tab'>
         <P6OnePlusOne />
       </Route>
-      <Route exact path='/no'>
+      <Route path='/no'>
         <P7No />
       </Route>
-      <Route exact path='/pop'>
+      <Route path='/pop'>
         <P8PopTheBalloon />
       </Route>
-      <Route exact path='/execute'>
+      <Route path='/execute'>
         <P9ExecuteProtocol />
       </Route>
-      <Route exact path='/reboot'>
+      <Route path='/reboot'>
         <RebootSequence />
       </Route>
     </Switch>
