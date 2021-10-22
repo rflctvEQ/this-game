@@ -32,7 +32,7 @@ function SpeechBox(props: any) {
             setNoDialogue(false);
             setIndex(0);
         }
-    }, [propsComponentVisibility, props.dialogue, index])
+    }, [propsComponentVisibility, props.dialogue, index, noDialogue])
 
     // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
