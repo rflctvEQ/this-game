@@ -27,12 +27,12 @@ function SpeechBox(props: any) {
 
     // make component visible when component visibility props is true
     useEffect(() => {
-        if (propsComponentVisibility === true && noDialogue){ 
-            setVisible('1');
-            setNoDialogue(false);
-            setIndex(0);
-        } 
-    }, [propsComponentVisibility, noDialogue])
+            if (propsComponentVisibility === true && noDialogue){ 
+                setVisible('1');
+                setNoDialogue(false);
+                setIndex(0);
+            } 
+    }, [propsComponentVisibility])
     
     // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
