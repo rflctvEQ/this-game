@@ -4,11 +4,11 @@ import './style.css';
 
 function SpeechBox(props: any) {
     // console.log('*** props ***', props);
-    const [ index, setIndex ] = useState<number>(0);
-    const [ noDialogue, setNoDialogue ] = useState<boolean>(false);
-    const [ visible, setVisible ] = useState<string>('0');
-    const [ propsDialogue, setPropsDialogue ] = useState<string[]>(props.dialogue);
-    const [ propsComponentVisibility, setPropsComponentVisibility ] = useState<boolean>(props.componentVisibility);
+    const [index, setIndex] = useState<number>(0);
+    const [noDialogue, setNoDialogue] = useState<boolean>(false);
+    const [visible, setVisible] = useState<string>('0');
+    const [propsDialogue, setPropsDialogue] = useState<string[]>(props.dialogue);
+    const [propsComponentVisibility, setPropsComponentVisibility] = useState<boolean>(props.componentVisibility);
 
     // number of dialogue items in props
     const dialogueItemsLength: number = propsDialogue.length - 1;
@@ -22,18 +22,18 @@ function SpeechBox(props: any) {
         } else if (props.componentVisibility && !noDialogue) {
             setVisible('1');
         }
-        
+
     }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength, noDialogue])
 
     // make component visible when component visibility props is true
     useEffect(() => {
-            if (propsComponentVisibility === true && noDialogue){ 
-                setVisible('1');
-                setNoDialogue(false);
-                setIndex(0);
-            } 
-    }, [propsComponentVisibility])
-    
+        if (propsComponentVisibility === true && ( noDialogue && props.dialogue.length !== index)) {
+            setVisible('1');
+            setNoDialogue(false);
+            setIndex(0);
+        }
+    }, [propsComponentVisibility, props.dialogue, index])
+
     // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
         if (index < dialogueItemsLength) {
@@ -48,11 +48,11 @@ function SpeechBox(props: any) {
 
     // console.log('component props: ', props);
     return (
-        <div style={{opacity: visible}} className='speechBoxWrapper'>
+        <div style={{ opacity: visible }} className='speechBoxWrapper'>
             <div className='speechBox'>
                 <p className='speechText'>{!noDialogue ? propsDialogue[index] : ''}</p>
             </div>
-            <button className='nextBtn' onClick={()=>handleNextBtn()}>Next</button>
+            <button className='nextBtn' onClick={() => handleNextBtn()}>Next</button>
         </div>
     )
 };
