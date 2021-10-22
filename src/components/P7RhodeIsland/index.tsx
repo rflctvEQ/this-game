@@ -18,7 +18,7 @@ function RhodeIsland() {
         } else {
             setVisible('none');
         }
-    });
+    }, [answer]);
 
     const handleContinue = () => {
         history.push('/pop');

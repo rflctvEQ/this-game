@@ -18,7 +18,7 @@ function OnePlusOneComponent() {
         } else {
             setVisible('none');
         }
-    })
+    }, [isNumber])
 
     const handleContinue = () => {
         history.push('/no')

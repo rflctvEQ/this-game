@@ -18,7 +18,7 @@ function FifthGradeMath() {
         } else {
             setVisible('none');
         }
-    })
+    }, [isNumber])
 
     const handleContinue = () => {
         history.push('/hidden')

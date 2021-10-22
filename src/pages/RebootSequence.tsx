@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+
 
 
 function RebootSequence() {
@@ -14,8 +14,6 @@ function RebootSequence() {
     const [period, setPeriod] = useState<string>('');
     const [period2, setPeriod2] = useState<string>('');
     const [period3, setPeriod3] = useState<string>('');
-
-    const history = useHistory();
 
     useEffect(() => {
         setTimeout(() => {

@@ -32,6 +32,10 @@ function WelcomeDoug(props: typeof dialogueData) {
         setTimeout(() => {
             setVisible('initial');
             setIsComponentVisible(true);
+            setData((state: any) => ({
+                ...state,
+                componentVisibility: true
+            }))
         }, 10000)
     }, [])
 

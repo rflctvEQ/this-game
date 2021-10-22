@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import * as React from 'react'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import BalloonAndImperative from '../../components/P8BalloonAndImperative';

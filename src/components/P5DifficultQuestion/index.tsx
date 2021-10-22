@@ -18,7 +18,7 @@ function DifficultQuestion() {
         } else {
             setVisible('none');
         }
-    });
+    }, [answer]);
 
     const handleContinue = () => {
         history.push('/dont-close-this-tab');

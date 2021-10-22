@@ -10,6 +10,12 @@ function Welcome() {
     const [characterNumber, setCharacterNumber] = useState<number>();
     const [textColor, setTextColor] = useState<string>('rgb(255, 0, 0)');
 
+    // makes input width reactive to text length
+    const inputWidth = characterNumber + 'rem';
+    const calculateInputWidth = () => {
+        let inputLength: number = inputState.length;
+        setCharacterNumber(inputLength * 1.375)
+    }
 
     useEffect(() => {
         if (inputState === 'Start' || inputState === 'start' || inputState === 'START') {
@@ -18,14 +24,8 @@ function Welcome() {
             setVisible('none');
         }
         calculateInputWidth();
-    });
+    }, [inputState, calculateInputWidth]);
 
-    // makes input width reactive to text length
-    const inputWidth = characterNumber + 'rem';
-    const calculateInputWidth = () => {
-        let inputLength: number = inputState.length;
-        setCharacterNumber(inputLength * 1.375)
-    }
 
     const history = useHistory<string>();
     // change color of 'this game' and send user to next page after a moment

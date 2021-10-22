@@ -11,6 +11,13 @@ function TypeName() {
     const [ characterNumber, setCharacterNumber ] = useState<number>();
     const username = nameState.trim();
 
+    // makes input width reactive to text length
+    const inputWidth = characterNumber + 'rem';
+    const calculateInputWidth = () => {
+        let inputLength: number = nameState.length;
+        setCharacterNumber(inputLength * 1.375)
+    }
+
     useEffect(() => {
         // button to continue appears when user enters name 
         if (username !== 'here' && username !== '') {
@@ -19,14 +26,7 @@ function TypeName() {
             setVisible('none');
         }
         calculateInputWidth();
-    })
-
-    // makes input width reactive to text length
-    const inputWidth = characterNumber + 'rem';
-    const calculateInputWidth = () => {
-        let inputLength: number = nameState.length;
-        setCharacterNumber(inputLength * 1.375)
-    }
+    }, [username, calculateInputWidth])
 
     const history = useHistory();
 

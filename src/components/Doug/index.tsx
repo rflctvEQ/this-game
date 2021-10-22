@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
 import './style.css';
 
 function Doug(props: any) {
-    const [visibility, setVisibility] = useState<string>('0')
+    const [visibility, setVisibility] = useState<string>('0');
 
     useEffect(() => {
         // if on welcome page, set doug to always be visible once rendered first time
@@ -12,10 +11,11 @@ function Doug(props: any) {
             setVisibility('1')
         } else if (props.componentVisibility === true) {
             setVisibility('1')
-        } else if (props.componentVisibility === false) {
+        } 
+        else if (props.componentVisibility === false) {
             setVisibility('0')
         }
-    });
+    }, [props.componentVisibility]);
 
     return (
         <div style={{ opacity: visibility }} className='outerBox'>

@@ -22,7 +22,8 @@ function SpeechBox(props: any) {
         } else if (props.componentVisibility && !noDialogue) {
             setVisible('1');
         }
-    })
+        
+    }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength, noDialogue])
 
     // make component visible when component visibility props is true
     useEffect(() => {

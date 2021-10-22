@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useState } from 'react';
 import './style.css';
 
 function BalloonAndImperative() {
