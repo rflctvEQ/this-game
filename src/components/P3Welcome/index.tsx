@@ -12,17 +12,20 @@ function Welcome() {
 
     // makes input width reactive to text length
     const inputWidth = characterNumber + 'rem';
+    let calculateInputWidth: any;
 
     useEffect(() => {
+        calculateInputWidth = () => {
+            let inputLength: number = inputState.length;
+            setCharacterNumber(inputLength * 1.375)
+        }
         if (inputState === 'Start' || inputState === 'start' || inputState === 'START') {
             setVisible('initial');
         } else {
             setVisible('none');
         }
-    }, [inputState, () => {
-        let inputLength: number = inputState.length;
-        setCharacterNumber(inputLength * 1.375)
-    }]);
+        calculateInputWidth();
+    }, [inputState, calculateInputWidth]);
 
 
     const history = useHistory<string>();

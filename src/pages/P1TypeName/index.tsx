@@ -13,18 +13,21 @@ function TypeName() {
 
     // makes input width reactive to text length
     const inputWidth = characterNumber + 'rem';
-
+    let calculateInputWidth: any;
+    
     useEffect(() => {
+        calculateInputWidth = () => {
+            let inputLength: number = nameState.length;
+            setCharacterNumber(inputLength * 1.375)
+        }
         // button to continue appears when user enters name 
         if (username !== 'here' && username !== '') {
             setVisible('initial');
         } else {
             setVisible('none');
         }
-    }, [username, () => {
-        let inputLength: number = nameState.length;
-        setCharacterNumber(inputLength * 1.375)
-    }])
+        calculateInputWidth();
+    }, [username, calculateInputWidth])
 
     const history = useHistory();
 
