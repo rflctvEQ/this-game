@@ -13,10 +13,9 @@ function TypeName() {
 
     // makes input width reactive to text length
     const inputWidth = characterNumber + 'rem';
-    let calculateInputWidth: any;
     
     useEffect(() => {
-        calculateInputWidth = () => {
+        const calculateInputWidth = () => {
             let inputLength: number = nameState.length;
             setCharacterNumber(inputLength * 1.375)
         }
@@ -27,7 +26,7 @@ function TypeName() {
             setVisible('none');
         }
         calculateInputWidth();
-    }, [username, calculateInputWidth])
+    }, [username])
 
     const history = useHistory();
 
