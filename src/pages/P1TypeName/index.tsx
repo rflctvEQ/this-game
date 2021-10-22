@@ -26,7 +26,7 @@ function TypeName() {
             setVisible('none');
         }
         calculateInputWidth();
-    }, [username])
+    }, [username, nameState])
 
     const history = useHistory();
 
