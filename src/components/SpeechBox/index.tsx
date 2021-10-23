@@ -7,43 +7,31 @@ function SpeechBox(props: any) {
     const [index, setIndex] = useState<number>(0);
     const [noDialogue, setNoDialogue] = useState<boolean>(false);
     const [visible, setVisible] = useState<string>('0');
-    const [propsDialogue, setPropsDialogue] = useState<string[]>(props.dialogue);
-    const [propsComponentVisibility, setPropsComponentVisibility] = useState<boolean>(props.componentVisibility);
+    // const [propsComponentVisibility, setPropsComponentVisibility] = useState<boolean>(props.componentVisibility);
 
     // number of dialogue items in props
-    const dialogueItemsLength: number = propsDialogue.length - 1;
+    const dialogueItemsLength: number = props.dialogue.length - 1;
 
     useEffect(() => {
-        // update dialogue and component visibility when props change
-        setPropsDialogue(props.dialogue);
-        setPropsComponentVisibility(props.componentVisibility);
-        if (window.location.pathname === '/welcome' && index < dialogueItemsLength) {
+        if (window.location.pathname === '/welcome' && index < dialogueItemsLength && props.componentVisibility === true) {
             setVisible('1');
-        } else if (props.componentVisibility && !noDialogue) {
+        } else if (props.componentVisibility === true) {
             setVisible('1');
-        }
-    }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength, noDialogue]);
+        } 
 
-    // make component visible when component visibility props is true
-    useEffect(() => {
-        if (propsComponentVisibility && noDialogue) {
-            setVisible('1');
-            setNoDialogue(false);
-            setIndex(0);
-        }
-    }, [propsComponentVisibility, noDialogue]);
+    }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength]);
 
     // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
-        console.log('index: ', index)
-        console.log('dialogueLength: ', dialogueItemsLength)
         if (index < dialogueItemsLength) {
             setVisible('1');
             setNoDialogue(false);
             setIndex(index + 1);
         } else {
             setVisible('0');
-            setNoDialogue(true);
+            setIndex(0);
+            // set props.componentVisibility to false
+            props.visibleFunc();
         }
     };
 
@@ -51,7 +39,7 @@ function SpeechBox(props: any) {
     return (
         <div style={{ opacity: visible }} className='speechBoxWrapper'>
             <div className='speechBox'>
-                <p className='speechText'>{!noDialogue ? propsDialogue[index] : ''}</p>
+                <p className='speechText'>{!noDialogue ? props.dialogue[index] : ''}</p>
             </div>
             <button className='nextBtn' onClick={() => handleNextBtn()}>Next</button>
         </div>

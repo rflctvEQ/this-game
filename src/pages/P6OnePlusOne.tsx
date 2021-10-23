@@ -8,6 +8,7 @@ import SpeechBox from '../components/SpeechBox';
 interface DialogueInterface {
     dialogue?: string[]
     componentVisibility?: boolean
+    visibleFunc?: any
 }
 
 const easyHint: DialogueInterface = {
@@ -22,11 +23,27 @@ const easyHint: DialogueInterface = {
         'You know I read that hidden text too, right?',
         'Go away.'
     ],
-    componentVisibility: false
+    componentVisibility: false,
+    visibleFunc: () => {}
 }
 
 function OnePlusOne(props: typeof easyHint) {
     const [ data, setData ] = useState<any>(easyHint);
+
+    // passed to child so child can update componentVisibility
+    const visibleFunc = () => {
+        if (!data.componentVisibility) {
+            setData((state: any) => ({
+                ...state,
+                componentVisibility: true
+            }))
+        } else {
+            setData((state: any) => ({
+                ...state, 
+                componentVisibility: false
+            }))
+        }
+    }
 
     const handleHintClick = () => {
         if (!data.componentVisibility) {
@@ -48,7 +65,7 @@ function OnePlusOne(props: typeof easyHint) {
             <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>HINT</h3></button>
             <OnePlusOneComponent />
             <Doug {...data} />
-            <SpeechBox {...data} />
+            <SpeechBox {...data} visibleFunc={visibleFunc} />
         </>
     )
 }

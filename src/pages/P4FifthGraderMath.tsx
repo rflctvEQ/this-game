@@ -8,6 +8,7 @@ import SpeechBox from '../components/SpeechBox';
 interface DialogueInterface {
     dialogue?: string[]
     componentVisibility?: boolean
+    visibleFunction?: any
 }
 
 const mathHint: DialogueInterface = {
@@ -18,12 +19,28 @@ const mathHint: DialogueInterface = {
         'But seriously? A math question?',
         'Don\'t worry. I\'ll get you out of here.'
     ],
-    componentVisibility: false
+    componentVisibility: false,
+    visibleFunction: () => {}
 }
 
 
 function FifthGraderMath(props: typeof mathHint) {
     const [ data, setData ] = useState<any>(mathHint);
+
+    // passed to child so child can update componentVisibility
+    const visibleFunc = () => {
+        if (!data.componentVisibility) {
+            setData((state: any) => ({
+                ...state,
+                componentVisibility: true
+            }))
+        } else {
+            setData((state: any) => ({
+                ...state, 
+                componentVisibility: false
+            }))
+        }
+    }
 
     const handleHintClick = () => {
         if (!data.componentVisibility) {
@@ -46,7 +63,7 @@ function FifthGraderMath(props: typeof mathHint) {
             <button onClick={() => handleHintClick()} style={{ border: 'none', backgroundColor: 'inherit', color: 'red', position: 'absolute', left: '83%', top: '25px' }}><h3>HINT</h3></button>
             <FifthGradeMath />
             <Doug {...data} />
-            <SpeechBox {...data} />
+            <SpeechBox {...data} visibleFunc={visibleFunc}  />
         </>
     )
 }

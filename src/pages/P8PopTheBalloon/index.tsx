@@ -11,6 +11,7 @@ import './style.css';
 interface DialogueInterface {
     dialogue?: string[]
     componentVisibility?: boolean
+    visibleFunc?: any
 }
 
 const popHint: DialogueInterface = {
@@ -19,7 +20,8 @@ const popHint: DialogueInterface = {
         'Or, you know...',
         'You could always just go away.'
     ],
-    componentVisibility: false
+    componentVisibility: false,
+    visibleFunc: () => {}
 }
 
 function PopTheBalloon(props: typeof popHint) {
@@ -35,6 +37,20 @@ function PopTheBalloon(props: typeof popHint) {
 
     const history = useHistory();
 
+    // passed to child so child can update componentVisibility
+    const visibleFunc = () => {
+        if (!data.componentVisibility) {
+            setData((state: any) => ({
+                ...state,
+                componentVisibility: true
+            }))
+        } else {
+            setData((state: any) => ({
+                ...state, 
+                componentVisibility: false
+            }))
+        }
+    }
 
     const handleHintClick = () => {
         if (!data.componentVisibility) {
@@ -103,7 +119,7 @@ function PopTheBalloon(props: typeof popHint) {
                         <BalloonAndImperative />
                     </section>
                     <Doug {...data}/>
-                    <SpeechBox {...data}/>
+                    <SpeechBox {...data} visibleFunc={visibleFunc} />
                 </main>
                 :
                 <main>
@@ -121,7 +137,7 @@ function PopTheBalloon(props: typeof popHint) {
                         btnText === 'CONTINUE '
                         ?
                         <div className='devSpeechWrapper'>
-                            <SpeechBox {...data} />
+                            <SpeechBox {...data} visibleFunc={visibleFunc} />
                         </div>
                         :
                         null
