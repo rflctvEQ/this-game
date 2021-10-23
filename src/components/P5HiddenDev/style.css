@@ -2,7 +2,7 @@
     margin: 25px;
 }
 
-.paragraph1::selection, .paragraph2::selection, .paragraph3::selection, .paragraph4::selection {
+/* .paragraph1::selection, .paragraph2::selection, .paragraph3::selection, .paragraph4::selection {
     background-color: black;
     color: white;
 }
@@ -19,4 +19,4 @@
 
 .thisGame {
     color: rgb(197, 240, 255);
-}
+} */

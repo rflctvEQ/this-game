@@ -1,4 +1,13 @@
 html, #root { 
   background-color: rgb(197, 240, 255);
+  font-size: 20px;
+}
+
+@media  screen and (max-width: 900px) {
+  html { font-size: 17px; }
+}
+
+@media screen and (max-width: 400px) {
+  html { font-size: 15px }
 }
 

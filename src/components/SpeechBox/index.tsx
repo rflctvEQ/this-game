@@ -22,20 +22,21 @@ function SpeechBox(props: any) {
         } else if (props.componentVisibility && !noDialogue) {
             setVisible('1');
         }
-
-    }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength, noDialogue])
+    }, [props.dialogue, props.componentVisibility, index, dialogueItemsLength, noDialogue]);
 
     // make component visible when component visibility props is true
     useEffect(() => {
-        if (propsComponentVisibility === true && ( noDialogue && props.dialogue.length !== index)) {
+        if (propsComponentVisibility && noDialogue) {
             setVisible('1');
             setNoDialogue(false);
             setIndex(0);
         }
-    }, [propsComponentVisibility, props.dialogue, index, noDialogue])
+    }, [propsComponentVisibility, noDialogue]);
 
     // go to next dialogue in index or make component invisible if no more dialogue
     const handleNextBtn = () => {
+        console.log('index: ', index)
+        console.log('dialogueLength: ', dialogueItemsLength)
         if (index < dialogueItemsLength) {
             setVisible('1');
             setNoDialogue(false);
@@ -44,7 +45,7 @@ function SpeechBox(props: any) {
             setVisible('0');
             setNoDialogue(true);
         }
-    }
+    };
 
     // console.log('component props: ', props);
     return (

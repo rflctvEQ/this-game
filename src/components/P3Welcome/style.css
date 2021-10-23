@@ -1,5 +1,5 @@
 .welcomeDiv {
-    margin-top: 20%;
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -9,6 +9,7 @@
     border: none;
     font-weight: 500;
     font-size: 40px;
+    min-width: 3rem;
 }
 
 .thisGame {
@@ -19,7 +20,7 @@
 .continueBtn {
     background-color: #B8C6FF;
     width: 10rem;
-    height: 3rem;
+    height: 4rem;
     margin: 25px auto;
     border: none;
     border-radius: 2000px;

@@ -19,7 +19,7 @@
 }
 
 .speechText {
-    font-size: 25px;
+    font-size: 1.25em;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -27,9 +27,7 @@
 .nextBtn {
     width: 300px;
     height: 50px;
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 10px auto 3rem auto;
     background-color: rgb(57, 57, 57);
     color: white;
     font-size: 40px;

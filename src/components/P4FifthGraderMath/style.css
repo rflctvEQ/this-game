@@ -1,5 +1,5 @@
 .mathWrapper {
-    margin-top: 20%;
+    margin-top: 3rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 .continueBtn {
     background-color: #B8C6FF;
     width: 10rem;
-    height: 3rem;
+    height: 4rem;
     margin: 25px auto;
     border: none;
     border-radius: 2000px;
