@@ -7,23 +7,15 @@ import './style.css';
 function Welcome() {
     const [inputState, setInputState] = useState<string>('Welcome to');
     const [visible, setVisible] = useState<string>('none');
-    const [characterNumber, setCharacterNumber] = useState<number>();
     const [textColor, setTextColor] = useState<string>('rgb(255, 0, 0)');
 
-    // makes input width reactive to text length
-    const inputWidth = characterNumber + 'rem';
 
     useEffect(() => {
-        const calculateInputWidth = () => {
-            let inputLength: number = inputState.length;
-            setCharacterNumber(inputLength * 1.375)
-        }
         if (inputState === 'Start' || inputState === 'start' || inputState === 'START') {
             setVisible('initial');
         } else {
             setVisible('none');
         }
-        calculateInputWidth();
     }, [inputState]);
 
 
@@ -43,8 +35,7 @@ function Welcome() {
                     <input
                         className='welcomeInput'
                         value={inputState}
-                        onChange={e => setInputState(e.target.value.trim())}
-                        style={{ width: `${inputWidth}` }}>
+                        onChange={e => setInputState(e.target.value.trim())}>
                     </input>
                 </h1>
                 <h1 className='thisGame' style={{ color: `${textColor}` }}>this game</h1>

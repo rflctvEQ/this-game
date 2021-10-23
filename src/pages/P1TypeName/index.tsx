@@ -7,32 +7,23 @@ import './style.css'
 
 function TypeName() {
     const [ nameState, setNameState ] = useState<string>('here');
-    const [ visible, setVisible ] = useState<string>('none')
-    const [ characterNumber, setCharacterNumber ] = useState<number>();
+    const [ visible, setVisible ] = useState<string>('none');
     const username = nameState.trim();
-
-    // makes input width reactive to text length
-    const inputWidth = characterNumber + 'rem';
     
     useEffect(() => {
-        const calculateInputWidth = () => {
-            let inputLength: number = nameState.length;
-            setCharacterNumber(inputLength * 1.375)
-        }
         // button to continue appears when user enters name 
         if (username !== 'here' && username !== '') {
             setVisible('initial');
         } else {
             setVisible('none');
         }
-        calculateInputWidth();
     }, [username, nameState])
 
     const history = useHistory();
 
     // save name to localStorage and send user to next page 
     const btnHandler = () => {
-        localStorage.setItem('username', nameState);
+        localStorage.setItem('username', username);
         console.log('name ', localStorage.getItem('username'));
         history.push('/load')
     }
@@ -46,12 +37,13 @@ function TypeName() {
                 <div className='typeNameHere'>
                     <h1 className='typeYourName'>
                         Type your name
-                        <input 
-                            className='inputHere' 
-                            value={nameState} 
-                            onChange={e => setNameState(e.target.value)} 
-                            style={{ width: `${inputWidth}`}}>
-                        </input>
+                    </h1>
+                    <h1 className='typeHere'>
+                    <input 
+                        className='inputHere' 
+                        value={nameState} 
+                        onChange={e => setNameState(e.target.value)}>
+                    </input>
                     </h1>
                 </div>
                 <div className='btnDiv'>

@@ -9,6 +9,7 @@
     border: none;
     font-weight: 500;
     font-size: 40px;
+    max-width: 80vw;
     min-width: 3rem;
 }
 

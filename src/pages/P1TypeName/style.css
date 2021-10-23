@@ -10,12 +10,19 @@
     font-family: monospace;
 }
 
+.typeHere {
+    text-align: center;
+    font-size: 4vh;
+    font-family: monospace;
+}
+
 .inputHere {
     border: none;
     font-weight: 500;
-    margin-left: 7px;
     background-color: inherit;
     min-width: 3rem;
+    max-width: 80vw;
+    text-align: center;
 }
 
 .btnDiv {
